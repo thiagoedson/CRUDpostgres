@@ -1,3 +1,6 @@
+<?php
+require_once '../src/function.php';
+?>
 <!DOCTYPE HTML>
 <html lang="pt-br">
 <head>
@@ -38,11 +41,44 @@
     <div class="starter-template">
         <div class="row">
             <div class="col-sm-4">
+                <div class="card border-warning shadow">
+                    <div class="card-header bg-warning">
+                        Cadastro tipo
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="tipo_descricao">
+                                Descrição
+                            </label>
+                            <input type="text" name="tipo_descricao" id="tipo_descricao" class="form-control form-control-sm">
+                        </div>
+                        <div class="form-group">
+                            <label for="tipo_porcentagem">
+                                %
+                            </label>
+                            <input type="text" name="tipo_porcentagem" id="tipo_porcentagem" class="form-control form-control-sm">
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-warning btn-sm" onclick="cadastrarTIPO();">
+                                <i class="fas fa-sign-in-alt"></i>
+                                Cadastrar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
                 <div class="card border-success shadow">
-                    <div class="card-header">
+                    <div class="card-header bg-success text-white">
                         Cadastro produto
                     </div>
                     <div class="card-body">
+                        <div class="form-group">
+                            <label for="produto_tipo">
+                                Tipo
+                            </label>
+                            <select name="produto_tipo" id="produto_tipo" class="form-control form-control-sm"></select>
+                        </div>
                         <div class="form-group">
                             <label for="produto_descricao">
                                 Descrição
@@ -64,37 +100,44 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-4">
-                <div class="card border-warning shadow">
-                    <div class="card-header">
-                        Cadastro tipo
-                    </div>
-                    <div class="card-body">
-                        <div class="form-group">
-                            <label for="tipo_descricao">
-                                Descrição
-                            </label>
-                            <input type="text" name="tipo_descricao" id="tipo_descricao" class="form-control form-control-sm">
-                        </div>
-                        <div class="form-group">
-                            <label for="tipo_porcentagem">
-                                %
-                            </label>
-                            <input type="text" name="tipo_porcentagem" id="tipo_porcentagem" class="form-control form-control-sm">
-                        </div>
-                        <div class="form-group">
-                            <button class="btn btn-warning btn-sm">
-                                <i class="fas fa-sign-in-alt"></i>
-                                Cadastrar
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </div>
 
 </main>
 <!-- /.container -->
 </body>
+<script>
+    function cadastrarTIPO(){
+        try{
+
+            let tipo_descricao = $("#tipo_descricao");
+            let tipo_porcentagem = $("#tipo_porcentagem");
+
+            $.ajax({
+                url: "servico.php?ACAO=CadastrarTIPO",
+                type: "post",
+                dataType: 'json',
+                data: {
+                    ACAO: "CadastrarTIPO",
+                    tipo_descricao : tipo_descricao.val(),
+                    tipo_porcentagem : tipo_porcentagem.val(),
+                },
+                success: function (response) {
+
+                    //location.reload();
+
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.log(textStatus, errorThrown);
+                }
+
+
+            });
+
+        }catch (e){
+            console.log(e);
+        }
+    }
+</script>
 </html>
