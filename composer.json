@@ -1,0 +1,12 @@
+{
+    "name": "thiagoedson/postgres",
+    "authors": [
+        {
+            "name": "Thiago Edson",
+            "email": "thiago.edson@itapema.sc.gov.br"
+        }
+    ],
+    "require": {
+        "seinopsys/postgresql-database-class": "^3.0"
+    }
+}

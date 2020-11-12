@@ -1,0 +1,62 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "f0ae50944233b3b7f87e0dc79f0e8cc4",
+    "packages": [
+        {
+            "name": "seinopsys/postgresql-database-class",
+            "version": "v3.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SeinopSys/PHP-PostgreSQL-Database-Class.git",
+                "reference": "47a648fdb67c2fc27e8ff35091c8e36cd95596e9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SeinopSys/PHP-PostgreSQL-Database-Class/zipball/47a648fdb67c2fc27e8ff35091c8e36cd95596e9",
+                "reference": "47a648fdb67c2fc27e8ff35091c8e36cd95596e9",
+                "shasum": ""
+            },
+            "require": {
+                "ext-pdo": "*",
+                "ext-pdo_pgsql": "*",
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "squizlabs/php_codesniffer": "3.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SeinopSys\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "SeinopSys",
+                    "email": "seinopsys@gmail.com",
+                    "homepage": "https://github.com/SeinopSys",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PHP wrapper class for PDO-based interaction with PostgreSQL databases, heavily based on ThingEngineer's MysqliDb class",
+            "time": "2019-05-26T17:41:40+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
+}
